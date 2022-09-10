@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fresh_music_radar/blocs/albums_bloc.dart';
@@ -11,7 +9,6 @@ import 'package:fresh_music_radar/models/duration_filters.dart';
 import 'package:fresh_music_radar/states/albums_state.dart';
 
 import 'package:fresh_music_radar/states/spotify_auth_states.dart';
-import 'package:fresh_music_radar/views/widgets/filter_widget.dart';
 
 import 'package:spotify/spotify.dart' as spotify;
 import 'package:url_launcher/url_launcher.dart';

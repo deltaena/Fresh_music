@@ -1,11 +1,7 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fresh_music_radar/blocs/albums_bloc.dart';
 import 'package:fresh_music_radar/models/duration_filters.dart';
-import 'package:fresh_music_radar/states/albums_state.dart';
-
 import '../../blocs/events/albums_fetch_event.dart';
 
 class FilterWidget extends StatelessWidget{
