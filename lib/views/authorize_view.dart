@@ -15,7 +15,7 @@ class AuthorizeView extends StatelessWidget{
       initialUrl: "",
       javascriptMode: JavascriptMode.unrestricted,
       navigationDelegate: (navReq) {
-        if (navReq.url.startsWith('https://pub.dev/packages/spotify')) {
+        if (navReq.url.startsWith('https://open.spotify.com/')) {
 
           Navigator.of(context).pop();
           return NavigationDecision.prevent;
