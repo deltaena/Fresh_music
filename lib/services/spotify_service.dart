@@ -25,7 +25,7 @@ class SpotifyServiceImpl extends SpotifyService {
 
   SpotifyServiceImpl._internal();
 
-  final redirectUri = 'https://open.spotify.com/';
+  final redirectUri = 'https://www.google.com/';
   final scopes = ['user-follow-read'];
 
   late SpotifyApiCredentials credentials;

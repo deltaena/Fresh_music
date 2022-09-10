@@ -23,28 +23,36 @@ class NewAlbumsView extends StatelessWidget{
       appBar: AppBar(
           title: const Text("Fresh albums"),
           actions: [
-            PopupMenuButton<DurationFilter>(
-              icon: Image.network("https://pic.onlinewebfonts.com/svg/img_491417.png"),
-              itemBuilder: (BuildContext context) =>
-                <PopupMenuItem<DurationFilter>>[
-                  PopupMenuItem<DurationFilter>(
-                    value: DurationFilter.ofMonth1,
-                    child: Text("Set threshold ${DurationFilter.ofMonth1.name} days ago"),
-                  ),
-                  PopupMenuItem<DurationFilter>(
-                    value: DurationFilter.ofMonth2,
-                    child: Text("Set threshold ${DurationFilter.ofMonth2.name} days ago"),
-                  ),
-                  PopupMenuItem<DurationFilter>(
-                    value: DurationFilter.ofMonth3,
-                      child: Text("Set threshold ${DurationFilter.ofMonth3.name} days ago"),
-                  ),
-                ],
-              onSelected: (filter) {
-                context.read<AlbumsBloc>().add(AlbumsFilterChanged(filter: filter));
+            BlocBuilder<SpotifyBloc, SpotifyAuthState>(
+              builder: (context, state){
+                if(state is SpotifyAuthSuccessful){
+                  return PopupMenuButton<DurationFilter>(
+                      icon: Image.network("https://pic.onlinewebfonts.com/svg/img_491417.png"),
+                      itemBuilder: (BuildContext context) =>
+                        <PopupMenuItem<DurationFilter>>[
+                          PopupMenuItem<DurationFilter>(
+                            value: DurationFilter.ofMonth1,
+                            child: Text("Set threshold ${DurationFilter.ofMonth1.name} days ago"),
+                          ),
+                          PopupMenuItem<DurationFilter>(
+                            value: DurationFilter.ofMonth2,
+                            child: Text("Set threshold ${DurationFilter.ofMonth2.name} days ago"),
+                          ),
+                          PopupMenuItem<DurationFilter>(
+                            value: DurationFilter.ofMonth3,
+                            child: Text("Set threshold ${DurationFilter.ofMonth3.name} days ago"),
+                          ),
+                       ],
+                      onSelected: (filter) {
+                        context.read<AlbumsBloc>().add(AlbumsFilterChanged(filter: filter));
 
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Filter applied! showing albums from the last ${filter.value} days")));
-              },
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Filter applied! showing albums from the last ${filter.value} days")));
+                      },
+                  );
+                }
+
+                return const SizedBox.shrink();
+              }
             ),
           ],
       ),
@@ -55,7 +63,7 @@ class NewAlbumsView extends StatelessWidget{
             return spotifyLogoWithText("Initializing...");
           }
 
-          if(state is SpotifyAuthSuccessful) { return getArtistsBlocBuilder(); }
+          if(state is SpotifyAuthSuccessful) { return getAlbumsBlocBuilder(); }
 
           if(state is SpotifyAuthFailed) { return getWebView(context, state.authorizationUrl); }
 
@@ -74,7 +82,7 @@ class NewAlbumsView extends StatelessWidget{
       initialUrl: authorizationUrl,
       javascriptMode: JavascriptMode.unrestricted,
       navigationDelegate: (navReq) {
-        if (navReq.url.startsWith('https://pub.dev/packages/spotify')) {
+        if (navReq.url.startsWith('https://www.google.com/')) {
           context.read<SpotifyBloc>().add(SpotifyFirstAuthorization(navReq.url));
 
           return NavigationDecision.prevent;
@@ -85,7 +93,7 @@ class NewAlbumsView extends StatelessWidget{
     );
   }
 
-  BlocBuilder getArtistsBlocBuilder(){
+  BlocBuilder getAlbumsBlocBuilder(){
     return BlocBuilder<AlbumsBloc, AlbumsState>(
       builder: (BuildContext context, state) {
 
