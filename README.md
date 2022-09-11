@@ -5,7 +5,7 @@
 
 ##App demo: 
 
-https://github.com/deltaena/Resources/blob/main/Fresh%20music/app%20preview.mp4
+https://github.com/deltaena/Resources/blob/main/Fresh%20music/app%20preview.gif
 
 ## 😃 Features:
 
