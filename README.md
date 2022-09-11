@@ -5,7 +5,7 @@
 
 ## App demo: 
 
-![Spotify auth](https://github.com/deltaena/Resources/blob/main/Fresh%20music/Spotify%20auth.jpg)
+![Spotify auth](https://github.com/deltaena/Resources/blob/main/Fresh%20music/Spotify%20auth.jpg | width = 100)
 ![Albums loading](https://github.com/deltaena/Resources/blob/main/Fresh%20music/Albums%20loading.jpg)
 ![app preview](https://github.com/deltaena/Resources/blob/main/Fresh%20music/app%20preview.gif)
 
