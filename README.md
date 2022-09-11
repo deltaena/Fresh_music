@@ -5,7 +5,7 @@
 
 ## App demo: 
 
-[SpotifyAuthVar]: [https://example.org](https://github.com/deltaena/Resources/blob/main/Fresh%20music/Spotify%20auth.jpg)
+[SpotifyAuthVar]: (https://github.com/deltaena/Resources/blob/main/Fresh%20music/Spotify%20auth.jpg)
 
 Solarized dark             |  Solarized Ocean          | column |
 :-------------------------:|:-------------------------:|:-------------------------:|
