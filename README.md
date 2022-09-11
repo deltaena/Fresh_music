@@ -1,4 +1,7 @@
-<img align="center" width="150" src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/icon.png"/>
+<p align="center">
+  <img width="150" src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/icon.png"/>
+</p>
+  
 <h1 align="center">Fresh Music Flutter App :musical_score:</h1>  
 <p align="center">
   🖊️ A simple music App built using <a href="https://flutter.dev/">Flutter</a> and <a href="https://developer.spotify.com/documentation/">Spotify api</a>
