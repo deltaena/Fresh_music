@@ -5,13 +5,9 @@
 
 ## App demo: 
 
-[SpotifyAuthVar]: (https://github.com/deltaena/Resources/blob/main/Fresh%20music/Spotify%20auth.jpg)
-
 Solarized dark             |  Solarized Ocean          | column |
 :-------------------------:|:-------------------------:|:-------------------------:|
-<img src="[SpotifyAuthVar]" width="200" /> |  
-<img src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/Albums%20loading.jpg" width="200" /> |
-<img src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/app%20preview.gif" width="200" /> |
+<img src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/Spotify%20auth.jpg" width="200" /> |  <img src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/Albums%20loading.jpg" width="200" /> | <img src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/app%20preview.gif" width="200" /> |
 
 ## 😃 Features:
 
