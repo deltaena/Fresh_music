@@ -9,7 +9,7 @@
 
 An artist you like released new music and you found out late, the next logic question is, how many more music have i missed from artists i like? well, the purpose of Fresh music is to resolve that doubt. Just connect your spotify account and let Fresh music show you the recent albums that the artists you follow have released. 
 
-## App demo: 
+## :iphone: App demo: 
 
 Spotify auth screen        |  Loading screen           | Fresh Albums preview |
 :-------------------------:|:-------------------------:|:-------------------------:|
@@ -19,6 +19,12 @@ Spotify auth screen        |  Loading screen           | Fresh Albums preview |
 
 - :key: Refreshes the authentication token automatically.
 - :hourglass_flowing_sand: Provide different filters to see recent music.
+
+## :raised_hands: Attributions
+
+- <a href="https://www.flaticon.com/free-icons/new" title="new icons">New icons created by Arafat Uddin - Flaticon</a>
+- <a href="https://www.flaticon.com/free-icons/hourglass" title="hourglass icons">Hourglass icons created by prettycons - Flaticon</a>
+- <a href="https://www.flaticon.com/free-icons/music" title="music icons">Music icons created by Freepik - Flaticon</a>
 
 <p align="center">
   ❤️ Feel free to create issues and contributions for features or bugs to this project.
