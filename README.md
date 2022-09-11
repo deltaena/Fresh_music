@@ -7,7 +7,7 @@
   🖊️ A simple music App built using <a href="https://flutter.dev/">Flutter</a> and <a href="https://developer.spotify.com/documentation/">Spotify api</a>
 </p>
 
-An artist you like released new music and you found out late, the next logic question is, how many more music have i missed from artists i like? well, the purpose of Fresh music is to resolve that doubt. Just connect your spotify account and let Fresh music show you the recent albums that the artists you follow have released. 
+An artist you like released new music and you found out late, the next logic question is, how many more music have i missed from artists i like? well, the purpose of Fresh music is to resolve that doubt. Just connect your spotify account and let Fresh music show you the recent singles/ep/albums that the artists you follow have released. 
 
 ## :iphone: App demo: 
   
