@@ -10,14 +10,10 @@
 An artist you like released new music and you found out late, the next logic question is, how many more music have i missed from artists i like? well, the purpose of Fresh music is to resolve that doubt. Just connect your spotify account and let Fresh music show you the recent albums that the artists you follow have released. 
 
 ## :iphone: App demo: 
-
-<p align="center">
   
 |Spotify auth screen       |  Loading screen           | Fresh Albums preview |
 :-------------------------:|:-------------------------:|:-------------------------:|
 |<img src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/Spotify%20auth.jpg" width="200" />|<img src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/Albums%20loading.jpg" width="200" />|<img src="https://github.com/deltaena/Resources/blob/main/Fresh%20music/app%20preview.gif" width="200" />|
-
-</p>
 
 ## 😃 Features:
 
