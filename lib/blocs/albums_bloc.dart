@@ -24,24 +24,26 @@ class AlbumsBloc extends Bloc<AlbumsEvent, AlbumsState>{
     try{
       var albumsStream = await _spotifyService.getFollowingArtistsAlbumsStream();
 
+      List<Album> albums = List.empty();
+
       await emit.forEach(albumsStream, onData: (event) {
-        if(event.item2 == event.item3) {
-          var notDuplicatedAlbums = clearDuplicatedAlbums(event.item1);
-          var sortedAlbums = sortByDate(notDuplicatedAlbums);
-
-          return state.copyWith(
-              status: () => AlbumsStatus.success,
-              albums: () => sortedAlbums
-          );
-        }
-
         var percentage = (100 * event.item2) / event.item3;
+
+        albums = event.item1;
 
         return state.copyWith(
           status: () => AlbumsStatus.loading,
             percentage: () => percentage
         );
       });
+
+      var notDuplicatedAlbums = clearDuplicatedAlbums(albums);
+      var sortedAlbums = sortByDate(notDuplicatedAlbums);
+
+      emit(state.copyWith(
+          status: () => AlbumsStatus.success,
+          albums: () => sortedAlbums
+      ));
     } on Exception {
       emit(state.copyWith(status: () => AlbumsStatus.failure));
     }

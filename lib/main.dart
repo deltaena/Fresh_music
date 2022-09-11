@@ -20,17 +20,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: const ColorScheme(
             brightness: Brightness.light,
-            primary: Color(0xffbaf2bb),
-            onPrimary: Colors.black,
-            secondary: Color(0xfff2bac9),
-            onSecondary: Colors.black,
+            primary: Color(0xffb60039),
+            onPrimary: Color(0xfffffed0),
+            secondary: Color(0xffff3861),
+            onSecondary: Colors.white,
             error: Colors.red,
             onError: Colors.yellow,
-            background: Color(0xffbaf2d8),
+            background: Color(0xfffffed0),
             onBackground: Colors.black,
-            surface: Color(0xffbad7f2),
-            onSurface: Colors.black
+            surface: Color(0xff1B998B),
+            onSurface: Colors.white
         ),
+        scaffoldBackgroundColor: const Color(0xFFFDE0E8),
         textTheme: const TextTheme(
           displayMedium: TextStyle(
             color: Colors.black,

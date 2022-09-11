@@ -27,26 +27,19 @@ class NewAlbumsView extends StatelessWidget{
               builder: (context, state){
                 if(state is SpotifyAuthSuccessful){
                   return PopupMenuButton<DurationFilter>(
-                      icon: Image.network("https://pic.onlinewebfonts.com/svg/img_491417.png"),
-                      itemBuilder: (BuildContext context) =>
-                        <PopupMenuItem<DurationFilter>>[
-                          PopupMenuItem<DurationFilter>(
-                            value: DurationFilter.ofMonth1,
-                            child: Text("Set threshold ${DurationFilter.ofMonth1.name} days ago"),
-                          ),
-                          PopupMenuItem<DurationFilter>(
-                            value: DurationFilter.ofMonth2,
-                            child: Text("Set threshold ${DurationFilter.ofMonth2.name} days ago"),
-                          ),
-                          PopupMenuItem<DurationFilter>(
-                            value: DurationFilter.ofMonth3,
-                            child: Text("Set threshold ${DurationFilter.ofMonth3.name} days ago"),
-                          ),
-                       ],
-                      onSelected: (filter) {
-                        context.read<AlbumsBloc>().add(AlbumsFilterChanged(filter: filter));
-
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Filter applied! showing albums from the last ${filter.value} days")));
+                    color: Theme.of(context).colorScheme.surface,
+                    icon: const Image(image: AssetImage('assets/images/hourglass.png')),
+                    itemBuilder: (BuildContext context) =>
+                      <PopupMenuItem<DurationFilter>>[
+                        getMenuButton(context, DurationFilter.ofMonth1),
+                        getMenuButton(context, DurationFilter.ofMonth2),
+                        getMenuButton(context, DurationFilter.ofMonth3),
+                      ],
+                    onSelected: (filter) {
+                      context.read<AlbumsBloc>().add(AlbumsFilterChanged(filter: filter));
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          backgroundColor: Theme.of(context).colorScheme.surface ,
+                          content: Text("Showing albums from the last ${filter.value} days!")));
                       },
                   );
                 }
@@ -60,7 +53,7 @@ class NewAlbumsView extends StatelessWidget{
         builder: (context, state){
           if(state is SpotifyAuthNotStarted) {
             context.read<SpotifyBloc>().add(SpotifyAuthorize());
-            return spotifyLogoWithText("Initializing...");
+            return iconWithText("Initializing...");
           }
 
           if(state is SpotifyAuthSuccessful) { return getAlbumsBlocBuilder(); }
@@ -75,6 +68,16 @@ class NewAlbumsView extends StatelessWidget{
           );
         })
       );
+  }
+
+  PopupMenuItem<DurationFilter> getMenuButton(BuildContext context, DurationFilter filter){
+    return PopupMenuItem<DurationFilter>(
+      value: filter,
+      child: Text(
+          "Set threshold ${filter.name} days ago",
+          style: TextStyle(color: Theme.of(context).colorScheme.onSecondary)
+      ),
+    );
   }
 
   WebView getWebView(BuildContext context, String authorizationUrl){
@@ -99,7 +102,7 @@ class NewAlbumsView extends StatelessWidget{
 
         if(state.status == AlbumsStatus.initial){
           context.read<AlbumsBloc>().add(AlbumsFetchRequested());
-          return spotifyLogoWithText("Initializing...");
+          return iconWithText("Initializing...");
         }
 
         if(state.status == AlbumsStatus.loading){ return showLoader(state.percentage); }
@@ -125,14 +128,17 @@ class NewAlbumsView extends StatelessWidget{
       Column(
         children: <Widget>[
           Expanded(
-            child: ListView.separated(
-                separatorBuilder: (context, index) => Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 50),
-                  child: Divider(color: Theme.of(context).colorScheme.secondary),
-                ),
-                itemCount: albums.length,
-                itemBuilder: (context, int index) => getInkWell(context, albums, index)
-            ),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+              child: ListView.separated(
+                  separatorBuilder: (context, index) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 50),
+                    child: Divider(color: Theme.of(context).colorScheme.secondary),
+                  ),
+                  itemCount: albums.length,
+                  itemBuilder: (context, int index) => getInkWell(context, albums, index)
+              ),
+            )
           )
         ],
       );
@@ -222,7 +228,7 @@ class NewAlbumsView extends StatelessWidget{
     );
   }
 
-  Widget spotifyLogoWithText(text){
+  Widget iconWithText(text){
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -243,7 +249,7 @@ class NewAlbumsView extends StatelessWidget{
           width: 80,
           height: 80,
           child: Image(
-              image: AssetImage('assets/images/spotify_icon_green.png')
+              image: AssetImage('assets/images/app_icon.png')
           ),
         )
     );
