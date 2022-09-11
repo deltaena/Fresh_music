@@ -3,7 +3,7 @@
   🖊️ A simple music App built using <a href="https://flutter.dev/">Flutter</a> and <a href="https://developer.spotify.com/documentation/">Spotify api</a>
 </p>
 
-##App demo: 
+## App demo: 
 
 https://github.com/deltaena/Resources/blob/main/Fresh%20music/app%20preview.gif
 
