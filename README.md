@@ -4,7 +4,7 @@
   
 <h1 align="center">Fresh Music Flutter App :musical_note:</h1>  
 <p align="center">
-  :computer: A simple music App built using <a href="https://flutter.dev/">Flutter</a>(with <a href="https://bloclibrary.dev/">bloc</a> architecure) and <a href="https://developer.spotify.com/documentation/">Spotify api</a>
+  :computer: A simple music App built using <a href="https://flutter.dev/">Flutter</a>(with <a href="https://bloclibrary.dev/">bloc architecure</a>) and <a href="https://developer.spotify.com/documentation/">Spotify api</a>
 </p>
 
 An artist you like released new music and you found out late, the next logic question is, how many more music have i missed from artists i like? well, the purpose of Fresh music is to resolve that doubt. Just connect your spotify account and let Fresh music show you the recent singles/ep/albums that the artists you follow have released. 
